@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Miss all the pixel perfect art that was popular in the 80's? If so, Pixel Art Maker is for you! Try and replicate old classics like Pac-Man, Mario or make your own art! This is a simple online pixel art editor to help you make pixel art easily. Pixel Art Maker is designed for beginners,and pros who just want to whip something up and share it with friends. If you like making pixel art, and need an online drawing app, then this app is for you.This pixel art maker app is here to promote creativity, but also bring the warm and fuzzy nostalgia associated with old videogames characters.This app is built for udacity front end web development scholarship challenge">
+    <meta name="keywords" content="Pixel Art Maker,Udacity,front end web development,Scholarship Challenge,Pixel,Art">
+    <meta name="author" content="Sukhjinder Arora">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google" content="notranslate">
+
+    <title>Pixel Art Maker</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   	<script defer src="scripts/html2canvas.min.js"></script>
+    <script defer src="scripts/designs.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Pixel Art Maker</h1>
+    </header>
+    <main>
+        <div>
+            <h2>Choose Grid Size</h2>
+            <form id="sizePicker">
+                <div class="inputField">
+                    <label> Grid Height:</label>
+                    <input type="number" id="inputHeight" name="height" min="1" value="1" max="130">
+                </div>
+                <div class="inputField">
+                    <label> Grid Width:</label>
+                    <input type="number" id="inputWidth" name="width" min="1" value="1" max="130">
+                </div>
+                <input type="submit" value="Submit">
+                <input type="button" value="Reset">
+            </form>
+        </div>
+        <div class="canvas">
+            <h2>Design Canvas</h2>
+
+            <div id="toolBox">
+                <form id="tools" autocomplete="off">
+                    <span class="colorSpan"><label for="colorPicker">Block Color</label>
+                    <input type="color" value="#ff0000" id="colorPicker" >
+                </span>
+                    <span class="colorSpan"><label for="gridColorPicker">Canvas Color</label>
+                    <input type='color'  value="#ffffff" id="gridColorPicker">
+                </span>
+                    <span class="colorSpan"><label for="borderColorPicker">Border Color</label>
+                    <input type="color" value="#c0c0c0" id="borderColorPicker" >
+                </span>
+
+                    <span><label for="paint-brush">Paint Brush</label>
+                    <input type="radio" name="options" id="paint-brush" value="brush" checked>
+                </span>
+                    <span><label for="eraser">Eraser</label>
+                    <input type="radio" name="options" id="eraser" value="eraser">
+                </span>
+                    <span id="pixelSpan">
+                    <label for="pixelInput">Pixel Size</label>
+                    <input type="range" min="5" max="20" value="20" id="pixelInput" step="1" >
+                </span>
+                </form>
+            </div>
+            <div id="tableBox">
+
+                <table id="pixelCanvas"></table>
+            </div>
+        </div>
+        <div id="previewImage">
+        </div>
+
+        <button id="previewButton">Preview</button>
+        <a id="downloadButton" download="" href="#">Download</a>
+
+        <div id="infoBox">
+            <span class="close fa-times-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z" fill="#ffffff"/></svg>
+            </span>
+            <h2>How To Use?</h2>
+            <ol>
+                <li>Select Grid Size and click submit to Create your canvas</li>
+                <ul style="list-style: none"> <li>Tip: On desktop devices you can create grid upto 130*130 cells under 30 milliseconds,thats 1/33 of a second</li>
+                    <li></li>
+                </ul>
+                <li>Select Block Color from block color Picker</li>
+                <li>Select Canvas Color from canvas color Picker</li>
+                <li>Select Border color from border color Picker</li>
+                <li>Select Pixel size from slider, pixel size ranges from 5 to 20.</li>
+                <li>To paint on grid, Click on paint brush radio button</li>
+                <li>To paint single grid do single mouse click</li>
+                <li>To paint like a brush, double click mouse and drag the mouse on grid to paint multiple cells in one stroke</li>
+                <li>You can preview the color by hovering the mouse over cell</li>
+                <li>To erase the pixel art, Click on Eraser radio button </li>
+                <li>To erase single grid do single mouse click</li>
+                <li>To erase multiple cells in one stroke, double click mouse and drag the mouse on grid to erase</li>
+                <li>Click reset to reset Canvas </li>
+                <li>Click Preview button to preview the pixel art</li>
+                <li>To download the image, click Download button and save or open the image</li>
+            </ol>
+        </div>
+    </main>
+    <footer>
+        <p>Designed and developed by
+            <a href="https://www.linkedin.com/in/sukhjinder-arora">Sukhjinder Arora</a>
+        </p>
+         <span class="info fa-question-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 512 512"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z" fill="#8a2be2"/></svg>  
+            
+        </span>
+    </footer>
+
+</body>
+
+</html>

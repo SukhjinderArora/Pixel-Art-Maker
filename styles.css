@@ -1,0 +1,212 @@
+html {
+     font-family: "Josefin Sans", sans-serif;
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+     min-height: 100%;
+     position: relative;
+}
+ body {
+     text-align: center;
+     margin-bottom: 70px;
+}
+li {
+    padding: 5px;
+}
+ h1 {
+     font-size: 80px;
+     margin: 0.2em;
+}
+ h2 {
+     margin: 1em 0 0.25em;
+     font-weight: lighter;
+}
+ h2:first-of-type {
+     margin-top: 0.5em;
+}
+ #tableBox {
+  display: inline-block;
+  padding: 0 10px;
+  box-sizing: content-box;
+    }
+ table, tr, td {
+     border: 1px solid #c0c0c0;
+}
+ table {
+     border-collapse: collapse;
+     margin: 0 auto;
+     -webkit-box-shadow: 0 0 20px #b0afab;
+     -moz-box-shadow: 0 0 20px #b0afab;
+     box-shadow: 0 0 20px #b0afab;
+}
+ tr {
+     height: 20px;
+}
+ td {
+     width: 20px;
+}
+ #toolBox {
+     padding-top: 10px;
+     padding-bottom: 15px;
+}
+ input[type="number"] {
+     width: 8em;
+     box-shadow: 0 0 10px rgb(189, 180, 189);
+     border: none;
+     height: 40px;
+     cursor: auto;
+     font-family: "Josefin Sans", sans-serif;
+}
+ input[type="submit"], input[type="button"] {
+     font-family: "Josefin Sans", sans-serif;
+     height: 50px;
+     width: 100px;
+     cursor: pointer;
+     background: transparent;
+     border: 2px solid blueviolet;
+     border-radius: 3px;
+     font-size: 16px;
+     font-weight: lighter;
+}
+ header {
+     color: blueviolet;
+}
+ input {
+     margin-right: 20px;
+}
+ div.inputField {
+     display: inline;
+}
+ a {
+     text-decoration: none;
+}
+ .canvas {
+     margin-top: 30px;
+}
+ label {
+     cursor: pointer;
+}
+ footer {
+     position: absolute;
+     bottom: 0;
+     height: 60px;
+     left: 0;
+     right: 0;
+     width: 100%;
+     background: #f5f5f5;
+     font-weight: lighter;
+}
+ .fa-question-circle {
+     color: #8a2be2;
+     font-size: 0;
+     font-family: "Josefin Sans", sans-serif;
+     cursor: pointer;
+     bottom: 50px;
+     right: 15px;
+     position: fixed;
+     background-color: white;
+     border-radius: 100%;
+}
+ .fa-question-circle :hover {
+     opacity: 0.8;
+}
+ #infoBox ol {
+     font-weight: lighter;
+     text-align: justify;
+}
+ #infoBox {
+     display: none;
+     opacity: 0;
+     position: fixed;
+     right: 1%;
+     bottom: 15%;
+     background: blueviolet;
+     color: white;
+     border-radius: 10px;
+     padding-right: 10px;
+     margin: 10px;
+}
+ .fa-times-circle {
+     position: absolute;
+     top: 15px;
+     right: 15px;
+     cursor: pointer;
+}
+ #previewButton, #downloadButton {
+     font-family: "Josefin Sans", sans-serif;
+     height: 50px;
+     width: 100px;
+     cursor: pointer;
+     background: transparent;
+     color: black;
+     border: 2px solid blueviolet;
+     border-radius: 3px;
+     font-size: 16px;
+     font-weight: lighter;
+     margin-top: 20px;
+     display: none;
+}
+ #downloadButton {
+     text-align: center;
+     padding: 15px;
+     text-decoration: none;
+     pointer-events: none;
+     opacity: 0.5;
+}
+ #previewButton:hover, #downloadButton:hover, input[type="submit"]:hover, input[type="button"]:hover {
+     background: blueviolet;
+     color: white;
+     transition: background 0.5s;
+}
+ #previewImage {
+     margin-top: 20px;
+}
+ #pixelInput {
+     position: relative;
+     top: 5px;
+}
+ @media (max-width: 600px) {
+     div.inputField {
+         display: block;
+         margin-top: 15px;
+    }
+     h1 {
+         font-size: 50px;
+    }
+     input[type="submit"], input[type="reset"] {
+         margin-top: 20px;
+    }
+     main {
+         margin-bottom: 25%;
+    }
+     #infoBox {
+         right: 0;
+         color: white;
+         border-radius: 10px;
+         padding-right: 10px;
+         margin: 5%;
+         height: 65vh;
+         overflow: scroll;
+    }
+     #borderSpan, #blockColorPicker {
+         display: block;
+         margin-bottom: 10px;
+    }
+     .colorSpan {
+         display: block;
+         margin: 0 auto;
+         margin-bottom: 10px;
+         text-align: right;
+         width: 200px;
+    }
+     tr {
+         height: 30px;
+    }
+     td {
+         width: 30px;
+    }
+     #pixelSpan{
+         display: none;
+    }
+}
+ 
